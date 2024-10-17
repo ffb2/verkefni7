@@ -60,8 +60,10 @@ function longest(str) {
   }
   return longestWord;
 }
-console.assert(longest(
-  "Hundur api fíll") === "Hundur", "longest skilar 'hundur'");
+console.assert(
+  longest("Hundur api fíll") === "Hundur",
+  "longest skilar 'hundur'"
+);
 
 function shortest(str) {
   var strSplit = str.split(" ");
@@ -75,7 +77,10 @@ function shortest(str) {
   }
   return shortestWord;
 }
-console.assert(shortest("Hundur api köttur") === "api", "shortest skilar 'Hundur");
+console.assert(
+  shortest("Hundur api köttur") === "api",
+  "shortest skilar 'Hundur"
+);
 
 function reverse(str) {
   const split = str.split("");
@@ -87,17 +92,23 @@ console.assert(reverse("halló") === "óllah", "reverse");
 console.assert(
   reverse(false === null, "reverse: ef ekki strengur, skila null")
 );
-
+/*const reversed = reverse(str)
+    if (reversed =)*/
 function palindrome(str) {
-  const lengd = str.length;
-  const midja = Math.floor(lengd / 2);
+  if (typeof str !== 'string' || str === '') {
+    return false;
+  } else {
+    const lengd = str.length;
+    const midja = Math.floor(lengd / 2);
 
-  const fyrriHluti = str.slice(0, midja).split("");
-  const seinniHluti = str
-    .slice(lengd % 2 === 0 ? midja : midja + 1)
-    .split("")
-    .reverse();
-  return fyrriHluti.join("") === seinniHluti.join("");
+    const fyrriHluti = str.toLowerCase()
+    .slice(0, midja).split("");
+    const seinniHluti = str.toLowerCase()
+      .slice(lengd % 2 === 0 ? midja : midja + 1)
+      .split("")
+      .reverse();
+    return fyrriHluti.join("") === seinniHluti.join("");
+  }
 }
 console.assert(palindrome("racecar") === "racecar", "palindrome");
 
@@ -149,4 +160,4 @@ function start() {
     }
   }
 }
-start();
+st
